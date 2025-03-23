@@ -44,6 +44,13 @@ function addTask(task) {
     <input type="checkbox" name="" >
     `;
 
+    let completeBtn = document.createElement("button");
+    completeBtn.innerHTML = "✔️";
+
+    completeBtn.addEventListener("click", function (){
+        deleteTask(task.text)
+    })
+
     let deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = "❌";
 
@@ -52,6 +59,7 @@ function addTask(task) {
     })
 
     list.appendChild(deleteBtn);
+    list.appendChild(completeBtn);
 
     unordered.appendChild(list);
 }
